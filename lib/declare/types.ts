@@ -1,17 +1,20 @@
+import {SMLinkStyle, SMNodeStyle, SMPromptStyle} from "./styles";
+
 /**
- * @description star map node
+ * @description 节点
  */
-export type SMNode = {
+type SMNode = {
     /**
      * @description 节点id. 默认为随机 uuid
      */
     id?: string
     /**
-     * @description 节点所属分组id(独立维护, 可与线条id重复). 默认为 node-default
+     * @description 节点所属分组id(独立维护id池, 与线条id可存在重复). 默认为 node-default
      */
     groupId?: string
     /**
      * @description 节点样式. `inherit` 继承父节点, `default` 默认样式
+     * @default {@link SMNodeStyleDefault}
      */
     style?: SMNodeStyle | 'inherit' | 'default'
     /**
@@ -29,11 +32,11 @@ export type SMNode = {
 }
 
 /**
- * @description
+ * @description 线条
  */
-export type SMLink = {
+type SMLink = {
     /**
-     * @description 线条id(独立维护, 可与节点id重复). 默认为随机 uuid
+     * @description 线条id(独立维护id池, 与节点id可存在重复). 默认为随机 uuid
      */
     id?: string
     /**
@@ -50,26 +53,42 @@ export type SMLink = {
     to: string | null
     /**
      * @description 线条样式. `default` 默认样式
+     * @default {@link SMLinkStyleDefault}
      */
     style?: SMLinkStyle | 'default'
 }
 
 /**
- * @description
+ * @description 节点文字框
  */
-export type SMPrompt = {
+type SMPrompt = {
     /**
-     * @description title
+     * @description 标题
      */
     title?: string
     /**
-     * @description description
+     * @description 文本
      */
-    desc?: string
+    content?: string
+    /**
+     * @description 最大行数
+     * @default {@link SMPromptMaxLine}
+     */
+    maxLine?: number
+    /**
+     * @description 单行最大字符数
+     * @default {@link SMPromptMaxInLine}
+     */
+    maxInLine?: number
+    /**
+     * @description 文字框样式
+     * @default {@link SMPromptStyleDefault}
+     */
+    style?: SMPromptStyle | 'default'
 }
 
-export type SMNodeStyle = {}
-
-export type SMLinkStyle = {}
-
-export type SMPromptStyle = {}
+export type {
+    SMNode,
+    SMLink,
+    SMPrompt,
+}

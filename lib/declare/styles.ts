@@ -1,0 +1,20 @@
+/**
+ * @description 节点样式
+ */
+type SMNodeStyle = {}
+
+/**
+ * @description 线条样式
+ */
+type SMLinkStyle = {}
+
+/**
+ * @description 文字框样式
+ */
+type SMPromptStyle = {}
+
+export type {
+    SMNodeStyle,
+    SMLinkStyle,
+    SMPromptStyle,
+}
