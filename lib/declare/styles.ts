@@ -11,7 +11,14 @@ type SMLinkStyle = {}
 /**
  * @description 文字框样式
  */
-type SMPromptStyle = {}
+type SMPromptStyle = {
+    width: number
+    height: number
+    radius: number
+    enTextColor: string
+    zhTextColor: string
+    backgroundColor: string
+}
 
 export type {
     SMNodeStyle,
