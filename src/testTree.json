@@ -1,7 +1,4 @@
-<script setup lang="ts">
-import { Parser } from "../lib/render/Parser";
-
-const testTree = {
+{
     "doi": "文章的doi",
     "meta": {
         "publication_name": {
@@ -136,16 +133,3 @@ const testTree = {
     ],
     "support": "未知结构"
 }
-
-const renderer = new Parser(testTree)
-</script>
-
-<template>
-    <div>
-        xxx
-    </div>
-</template>
-
-<style scoped>
-
-</style>

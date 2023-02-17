@@ -1,5 +1,3 @@
-import { SMLinkStyle, SMNodeStyle, SMPromptStyle } from "./styles";
-
 /**
  * @description 节点
  */
@@ -11,28 +9,41 @@ type SMNode = {
     /**
      * @description 节点所属分组id(独立维护id池, 与线条id可存在重复). 默认为 node-default
      */
-    groupId?: string
-    /**
-     * @description 所处层级 (中心节点为 0)
-     */
-    readonly level?: number
-    /**
-     * @description 节点样式. `inherit` 继承父节点, `default` 默认样式
-     * @default {@link SMNodeStyleDefault}
-     */
-    style?: SMNodeStyle | 'inherit' | 'default'
+    groupId?: SMGroup
     /**
      * @description 节点的基本信息
      */
-    prompt?: SMPrompt
+    prompt?: {
+        /**
+         * @description 标题
+         */
+        title?: string
+        /**
+         * @description 文本
+         */
+        content?: string
+    }
     /**
-     * @description 从此节点出发的线条
+     * @description 解析得到的布局信息 不要修改
      */
-    link?: Omit<SMLink, 'from' | 'to'>
-    /**
-     * @description children
-     */
-    children?: SMNode[]
+    readonly layout?: {
+        /**
+         * @description 所处层级 (中心节点为 0)
+         */
+        level: number
+        /**
+         * @description 在轨道上的顺序 小于0 - 左侧; 大于0 右侧; 从上到下绝对值递增
+         */
+        trackOrder: number
+        /**
+         * @description 左 距离
+         */
+        left: number
+        /**
+         * @description 上 距离
+         */
+        top: number
+    }
 }
 
 /**
@@ -48,47 +59,22 @@ type SMLink = {
      */
     groupId?: string
     /**
-     * @description 线条起点节点id. 根节点此值为 `null`
+     * @description 解析得到的布局信息 不要修改
      */
-    from: string | null
-    /**
-     * @description 线条终点节点id. 叶节点此值为 `null`
-     */
-    to: string | null
-    /**
-     * @description 线条样式. `default` 默认样式
-     * @default {@link SMLinkStyleDefault}
-     */
-    style?: SMLinkStyle | 'default'
-}
-
-/**
- * @description 节点文字框
- */
-type SMPrompt = {
-    /**
-     * @description 标题
-     */
-    title?: string
-    /**
-     * @description 文本
-     */
-    content?: string
-    /**
-     * @description 最大行数
-     * @default {@link SMPromptMaxLine}
-     */
-    maxLine?: number
-    /**
-     * @description 单行最大字符数
-     * @default {@link SMPromptMaxInLine}
-     */
-    maxInLine?: number
-    /**
-     * @description 文字框样式
-     * @default {@link SMPromptStyleDefault}
-     */
-    style?: SMPromptStyle | 'default'
+    readonly layout?: {
+        /**
+         * @description 所处层级 (中心节点为 0)
+         */
+        level: number
+        /**
+         * @description 线条起点节点id. 根节点此值为 `null`
+         */
+        from: string
+        /**
+         * @description 线条终点节点id. 叶节点此值为 `null`
+         */
+        to: string
+    }
 }
 
 // region 组别
@@ -142,6 +128,7 @@ type SMMetaNode = {
 type SMAuthorNode = {
     // 0 - 通讯作者; 1.. 一作
     level: number
+    name?: string
     email?: string
     address?: string
     orcid?: string
@@ -217,7 +204,6 @@ type SMSupportNode = never  // todo
 export type {
     SMNode,
     SMLink,
-    SMPrompt,
     SMGroup,
 
     SMTree,
