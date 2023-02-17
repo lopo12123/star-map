@@ -553,8 +553,6 @@ class Parser {
         this.parseAbstract(tree.abstract)
         this.parseBody(tree.body)
         this.parseConclusion(tree.conclusion)
-
-        console.log(this.levelOrder)
     }
 
     /**

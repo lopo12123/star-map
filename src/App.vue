@@ -141,11 +141,19 @@ const renderer = new Parser(testTree)
 </script>
 
 <template>
-    <div>
-        xxx
+    <div id="container">
+        <div id="canvas"></div>
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+#container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 
+    #canvas {
+
+    }
+}
 </style>
