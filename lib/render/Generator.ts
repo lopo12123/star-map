@@ -3,33 +3,34 @@ import { SMNodeStyleDefault } from "../constants/styles";
 
 type SMNodePrefabProps = {
     id: string
-    groupId: SMGroup
     level: number
     trackOrder: number
+    group: SMGroup
     title: string
     content: string
 }
 
 class SMNodePrefab {
-    private readonly _node: SMNode
+    private readonly _config: SMNodePrefabProps
+    private _position: { dx: number, dy: number } = { dx: 0, dy: 0 }
 
     constructor(props: SMNodePrefabProps) {
-        this._node = {
-            id: props.id,
-            prompt: {
-                title: props.title,
-                content: props.content
-            },
-            layout: {
-                level: props.level,
-                trackOrder: props.trackOrder,
-                left: 0, top: 0
-            }
-        }
+        this._config = props
     }
 
-    toSMNode() {
-        return this._node
+    getXY(): { dx: number, dy: number } {
+        return { ...this._position }
+    }
+
+    getConfig(): SMNodePrefabProps {
+        return { ...this._config }
+    }
+
+    toHTML(dx: number, dy: number) {
+        this._position = { dx, dy }
+
+        // todo
+        return this._config
     }
 }
 

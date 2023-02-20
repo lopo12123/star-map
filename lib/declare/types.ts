@@ -101,7 +101,7 @@ type SMTree = {
     keyword: SMKeywordsNode[]
     abstract: SMAbstractNode
     body: SMBodyNode[]
-    conclusion: SMConclusionNode[]
+    conclusion: SMConclusionNode
     support: SMSupportNode
 }
 /**
@@ -109,7 +109,7 @@ type SMTree = {
  */
 type SMMetaNode = {
     // 期刊
-    publication_name?: { full?: string, short?: string }
+    publication_name?: string
     // issn
     issn?: { print_issn?: string, online_issn?: string }
     // url
@@ -128,7 +128,8 @@ type SMMetaNode = {
  */
 type SMAuthorNode = {
     // 0 - 通讯作者; 1.. 一作
-    level: number
+    index: number
+    role?: string  // 'corresp'
     name?: string
     email?: string
     address?: string
@@ -144,14 +145,18 @@ type SMAuthorNode = {
  */
 type SMTableNode = {
     name: string
-    keywords: string[]
+    content: string
+    base: string
+    word?: string[]
 }
 /**
  * @description 子树 - 图片
  */
 type SMFigNode = {
     name: string
-    keywords: string[]
+    content: string
+    base: string
+    word?: string[]
 }
 /**
  * @description 子树 - 引用
@@ -159,8 +164,8 @@ type SMFigNode = {
 type SMReferenceNode = {
     doi?: string
     title?: string
-    author?: string[]
-    publication_name?: { full?: string, short?: string }
+    author?: { orcid: string, name: string }[]
+    publication_name?: string
     issn?: { print_issn?: string, online_issn?: string }
     url?: string
     date?: { published_date?: string, submission?: string }
@@ -187,12 +192,12 @@ type SMAbstractNode = { [k in SMAIResultGroup]: string[] }
  */
 type SMBodyNode = {
     name: string
-    children?: string[]
+    content?: { [k in SMAIResultGroup]: string[] }
 }
 /**
  * @description 子树 - 结论
  */
-type SMConclusionNode = string
+type SMConclusionNode = { [k in SMAIResultGroup]: string[] }
 /**
  * @description 子树 - 科研支持
  */

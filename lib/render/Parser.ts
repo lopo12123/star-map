@@ -44,7 +44,7 @@ class Parser {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
-            groupId: 'meta',
+            group: 'meta',
             level: 1,
             trackOrder: --this.levelOrder.lv1_l,
             title: 'meta',
@@ -53,36 +53,31 @@ class Parser {
 
         if(publication_name) {
             const id = getId()
-            this.nodes_lv1.set(id, Generator.Node({
+            this.nodes_lv2.set(id, Generator.Node({
                 id,
-                groupId: 'meta',
+                group: 'meta',
                 level: 2,
                 trackOrder: --this.levelOrder.lv2_l,
                 title: '期刊',
                 content: ''
             }))
 
-            for (let key in publication_name) {
-                // @ts-ignore
-                if(!publication_name[key]) continue
-                const id = getId()
-                this.nodes_lv3.set(id, Generator.Node({
-                    id,
-                    groupId: 'meta',
-                    level: 3,
-                    trackOrder: --this.levelOrder.lv3_l,
-                    // @ts-ignore
-                    title: publication_name[key],
-                    content: ''
-                }))
-            }
+            const id2 = getId()
+            this.nodes_lv3.set(id2, Generator.Node({
+                id: id2,
+                group: 'meta',
+                level: 3,
+                trackOrder: --this.levelOrder.lv3_l,
+                title: publication_name,
+                content: ''
+            }))
         }
 
         if(issn) {
             const id = getId()
-            this.nodes_lv1.set(id, Generator.Node({
+            this.nodes_lv2.set(id, Generator.Node({
                 id,
-                groupId: 'meta',
+                group: 'meta',
                 level: 2,
                 trackOrder: --this.levelOrder.lv2_l,
                 title: 'issn',
@@ -95,7 +90,7 @@ class Parser {
                 const id = getId()
                 this.nodes_lv3.set(id, Generator.Node({
                     id,
-                    groupId: 'meta',
+                    group: 'meta',
                     level: 3,
                     trackOrder: --this.levelOrder.lv3_l,
                     // @ts-ignore
@@ -107,9 +102,9 @@ class Parser {
 
         if(url) {
             const id = getId()
-            this.nodes_lv1.set(id, Generator.Node({
+            this.nodes_lv2.set(id, Generator.Node({
                 id,
-                groupId: 'meta',
+                group: 'meta',
                 level: 2,
                 trackOrder: --this.levelOrder.lv2_l,
                 title: 'url',
@@ -119,7 +114,7 @@ class Parser {
             const id2 = getId()
             this.nodes_lv3.set(id, Generator.Node({
                 id: id2,
-                groupId: 'meta',
+                group: 'meta',
                 level: 3,
                 trackOrder: --this.levelOrder.lv3_l,
                 // @ts-ignore
@@ -130,9 +125,9 @@ class Parser {
 
         if(date) {
             const id = getId()
-            this.nodes_lv1.set(id, Generator.Node({
+            this.nodes_lv2.set(id, Generator.Node({
                 id,
-                groupId: 'meta',
+                group: 'meta',
                 level: 2,
                 trackOrder: --this.levelOrder.lv2_l,
                 title: 'date',
@@ -145,7 +140,7 @@ class Parser {
                 const id = getId()
                 this.nodes_lv3.set(id, Generator.Node({
                     id,
-                    groupId: 'meta',
+                    group: 'meta',
                     level: 3,
                     trackOrder: --this.levelOrder.lv3_l,
                     // @ts-ignore
@@ -157,9 +152,9 @@ class Parser {
 
         if(volume) {
             const id = getId()
-            this.nodes_lv1.set(id, Generator.Node({
+            this.nodes_lv2.set(id, Generator.Node({
                 id,
-                groupId: 'meta',
+                group: 'meta',
                 level: 2,
                 trackOrder: --this.levelOrder.lv2_l,
                 title: 'volume',
@@ -169,7 +164,7 @@ class Parser {
             const id2 = getId()
             this.nodes_lv3.set(id, Generator.Node({
                 id: id2,
-                groupId: 'meta',
+                group: 'meta',
                 level: 3,
                 trackOrder: --this.levelOrder.lv3_l,
                 // @ts-ignore
@@ -180,9 +175,9 @@ class Parser {
 
         if(issue) {
             const id = getId()
-            this.nodes_lv1.set(id, Generator.Node({
+            this.nodes_lv2.set(id, Generator.Node({
                 id,
-                groupId: 'meta',
+                group: 'meta',
                 level: 2,
                 trackOrder: --this.levelOrder.lv2_l,
                 title: 'volume',
@@ -192,7 +187,7 @@ class Parser {
             const id2 = getId()
             this.nodes_lv3.set(id, Generator.Node({
                 id: id2,
-                groupId: 'meta',
+                group: 'meta',
                 level: 3,
                 trackOrder: --this.levelOrder.lv3_l,
                 // @ts-ignore
@@ -203,9 +198,9 @@ class Parser {
 
         if(page) {
             const id = getId()
-            this.nodes_lv1.set(id, Generator.Node({
+            this.nodes_lv2.set(id, Generator.Node({
                 id,
-                groupId: 'meta',
+                group: 'meta',
                 level: 2,
                 trackOrder: --this.levelOrder.lv2_l,
                 title: 'page',
@@ -215,7 +210,7 @@ class Parser {
             const id2 = getId()
             this.nodes_lv3.set(id2, Generator.Node({
                 id: id2,
-                groupId: 'meta',
+                group: 'meta',
                 level: 3,
                 trackOrder: --this.levelOrder.lv3_l,
                 // @ts-ignore
@@ -234,7 +229,7 @@ class Parser {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
-            groupId: 'author',
+            group: 'author',
             level: 1,
             trackOrder: --this.levelOrder.lv1_l,
             title: 'author',
@@ -248,10 +243,10 @@ class Parser {
                 const id = getId()
                 this.nodes_lv2.set(id, Generator.Node({
                     id,
-                    groupId: 'author',
+                    group: 'author',
                     level: 2,
                     trackOrder: --this.levelOrder.lv2_l,
-                    title: author.level === 0 ? '通讯作者' : '作者',
+                    title: author.role === 'corresp' ? '通讯作者' : '作者',
                     content: ''
                 }))
 
@@ -260,7 +255,7 @@ class Parser {
                     const id = getId()
                     this.nodes_lv3.set(id, Generator.Node({
                         id,
-                        groupId: 'author',
+                        group: 'author',
                         level: 3,
                         trackOrder: --this.levelOrder.lv3_l,
                         // @ts-ignore
@@ -283,7 +278,7 @@ class Parser {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
-            groupId: 'fig',
+            group: 'fig',
             level: 1,
             trackOrder: --this.levelOrder.lv1_l,
             title: 'fig',
@@ -294,24 +289,24 @@ class Parser {
             const id = getId()
             this.nodes_lv2.set(id, Generator.Node({
                 id,
-                groupId: 'fig',
+                group: 'fig',
                 level: 2,
                 trackOrder: --this.levelOrder.lv2_l,
                 title: fig.name,
-                content: ''
+                content: fig.content
             }))
 
-            for (let k in fig.keywords) {
+            fig.word?.forEach(w => {
                 const id = getId()
                 this.nodes_lv3.set(id, Generator.Node({
                     id,
-                    groupId: 'fig',
+                    group: 'fig',
                     level: 3,
                     trackOrder: --this.levelOrder.lv3_l,
-                    title: fig.keywords[k],
+                    title: w,
                     content: ''
                 }))
-            }
+            })
         })
     }
 
@@ -324,7 +319,7 @@ class Parser {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
-            groupId: 'table',
+            group: 'table',
             level: 1,
             trackOrder: --this.levelOrder.lv1_l,
             title: 'table',
@@ -335,24 +330,24 @@ class Parser {
             const id = getId()
             this.nodes_lv2.set(id, Generator.Node({
                 id,
-                groupId: 'table',
+                group: 'table',
                 level: 2,
                 trackOrder: --this.levelOrder.lv2_l,
                 title: table.name,
-                content: ''
+                content: table.content
             }))
 
-            for (let k in table.keywords) {
+            table.word?.forEach(w => {
                 const id = getId()
                 this.nodes_lv3.set(id, Generator.Node({
                     id,
-                    groupId: 'table',
+                    group: 'table',
                     level: 3,
                     trackOrder: --this.levelOrder.lv3_l,
-                    title: table.keywords[k],
+                    title: w,
                     content: ''
                 }))
-            }
+            })
         })
     }
 
@@ -370,7 +365,7 @@ class Parser {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
-            groupId: 'title',
+            group: 'title',
             level: 1,
             trackOrder: ++this.levelOrder.lv1_r,
             title: 'title',
@@ -380,7 +375,7 @@ class Parser {
         const id2 = getId()
         this.nodes_lv2.set(id2, Generator.Node({
             id: id2,
-            groupId: 'title',
+            group: 'title',
             level: 2,
             trackOrder: ++this.levelOrder.lv2_r,
             title: title,
@@ -397,7 +392,7 @@ class Parser {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
-            groupId: 'keyword',
+            group: 'keyword',
             level: 1,
             trackOrder: ++this.levelOrder.lv1_r,
             title: 'keyword',
@@ -408,7 +403,7 @@ class Parser {
             const id = getId()
             this.nodes_lv2.set(id, Generator.Node({
                 id: id,
-                groupId: 'keyword',
+                group: 'keyword',
                 level: 2,
                 trackOrder: ++this.levelOrder.lv2_r,
                 title: keyword,
@@ -424,7 +419,7 @@ class Parser {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
-            groupId: 'abstract',
+            group: 'abstract',
             level: 1,
             trackOrder: ++this.levelOrder.lv1_r,
             title: 'abstract',
@@ -435,7 +430,7 @@ class Parser {
             const id = getId()
             this.nodes_lv2.set(id, Generator.Node({
                 id: id,
-                groupId: 'abstract',
+                group: 'abstract',
                 level: 2,
                 trackOrder: ++this.levelOrder.lv2_r,
                 title: abstract_item,
@@ -447,7 +442,7 @@ class Parser {
                 const id = getId()
                 this.nodes_lv3.set(id, Generator.Node({
                     id: id,
-                    groupId: 'abstract',
+                    group: 'abstract',
                     level: 3,
                     trackOrder: ++this.levelOrder.lv3_r,
                     title: abstract_sub,
@@ -466,7 +461,7 @@ class Parser {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
-            groupId: 'body',
+            group: 'body',
             level: 1,
             trackOrder: ++this.levelOrder.lv1_r,
             title: 'body',
@@ -477,54 +472,68 @@ class Parser {
             const id = getId()
             this.nodes_lv2.set(id, Generator.Node({
                 id: id,
-                groupId: 'body',
+                group: 'body',
                 level: 2,
                 trackOrder: ++this.levelOrder.lv2_r,
                 title: body.name,
                 content: ''
             }))
 
-            body.children?.forEach(body_sub => {
-                const id = getId()
-                this.nodes_lv3.set(id, Generator.Node({
-                    id: id,
-                    groupId: 'body',
-                    level: 3,
-                    trackOrder: ++this.levelOrder.lv3_r,
-                    title: body_sub,
-                    content: ''
-                }))
-            })
+            for (let body_content_item in body.content) {
+                // @ts-ignore
+                body.content[body_content_item]?.forEach(body_content_sub => {
+                    const id = getId()
+                    this.nodes_lv3.set(id, Generator.Node({
+                        id: id,
+                        group: 'body',
+                        level: 3,
+                        trackOrder: ++this.levelOrder.lv3_r,
+                        title: body_content_sub,
+                        content: ''
+                    }))
+                })
+            }
         })
     }
 
     /**
      * @description 解析 Conclusion 子树
      */
-    private parseConclusion(conclusions: SMConclusionNode[]) {
-        if(conclusions.length === 0) return
-
+    private parseConclusion(conclusions: SMConclusionNode) {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
-            groupId: 'conclusion',
+            group: 'conclusion',
             level: 1,
             trackOrder: ++this.levelOrder.lv1_r,
             title: 'conclusion',
             content: '结论'
         }))
 
-        conclusions.forEach(conclusion => {
+        for (let conclusion_item in conclusions) {
             const id = getId()
             this.nodes_lv2.set(id, Generator.Node({
                 id: id,
-                groupId: 'conclusion',
+                group: 'conclusion',
                 level: 2,
                 trackOrder: ++this.levelOrder.lv2_r,
-                title: conclusion,
+                title: conclusion_item,
                 content: ''
             }))
-        })
+
+            // @ts-ignore
+            conclusions[conclusion_item].forEach(conclusion_sub => {
+                const id = getId()
+                this.nodes_lv3.set(id, Generator.Node({
+                    id: id,
+                    group: 'conclusion',
+                    level: 3,
+                    trackOrder: ++this.levelOrder.lv3_r,
+                    title: conclusion_sub,
+                    content: ''
+                }))
+            })
+        }
     }
 
     /**
@@ -548,8 +557,22 @@ class Parser {
         this.parseAbstract(tree.abstract)
         this.parseBody(tree.body)
         this.parseConclusion(tree.conclusion)
+    }
 
-        console.log(this.levelOrder)
+    getLv1() {
+        return [ ...this.nodes_lv1.values() ].map(v => v.getConfig())
+    }
+
+    getLv2() {
+        return this.nodes_lv2
+    }
+
+    getLv3() {
+        return this.nodes_lv3
+    }
+
+    dispose() {
+
     }
 
     /**

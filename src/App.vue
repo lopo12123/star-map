@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { Parser } from "../lib/render/Parser";
-// import TestTree from "./testTree.json";
 import TestTree from "./demo.json";
 
 import { SMGroup } from "../lib";
 import NodeWithPrompt from "./components/NodeWithPrompt.vue";
 
-const renderer = new Parser(TestTree)
+console.time('parse')
+const parser = new Parser(TestTree)
+console.timeEnd('parse')
+
+const node_lv1 = parser.getLv1()
+// const node_lv2 = parser.getLv2()
+// const node_lv3 = parser.getLv3()
+
+console.log(node_lv1)
+// console.log(node_lv2)
+// console.log(node_lv3)
 
 // 第一层级点位固定
 const GroupRootNodes = <{
