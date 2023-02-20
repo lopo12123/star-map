@@ -44,7 +44,18 @@ const nodes_lv2: SMNodeConfig[] = lv2.map(v => {
         ...calc_rotate(Math.abs(trackOrder) - 1, trackOrder < 0 ? lv2_left : (lv2_count - lv2_left), Constants.TrackRadius2, trackOrder < 0 ? 'left' : 'right')
     }
 })
-console.log(lv2)
+
+// 第三层
+const lv3 = parser.getLv3()
+const lv3_count = lv3.length
+const lv3_left = lv3.reduce((prev, curr) => prev + (curr.trackOrder < 0 ? 1 : 0), 0)
+const nodes_lv3: SMNodeConfig[] = lv3.map(v => {
+    const { group, title, content, trackOrder } = v
+    return {
+        group, title, content,
+        ...calc_rotate(Math.abs(trackOrder) - 1, trackOrder < 0 ? lv3_left : (lv3_count - lv3_left), Constants.TrackRadius3, trackOrder < 0 ? 'left' : 'right')
+    }
+})
 
 console.timeEnd('parse')
 </script>
@@ -77,6 +88,15 @@ console.timeEnd('parse')
                         <NodeWithPrompt
                             v-for="(node, idx) in nodes_lv2"
                             :key="`node-lv2-${node.group}-${idx}`"
+                            :title="node.title" :content="node.content"
+                            :group="node.group"
+                            :side="node.dx < 0 ? 'left' : 'right'"
+                            :anchor="[node.dx,node.dy]"/>
+
+                        <!-- 三级点位 -->
+                        <NodeWithPrompt
+                            v-for="(node, idx) in nodes_lv3"
+                            :key="`node-lv3-${node.group}-${idx}`"
                             :title="node.title" :content="node.content"
                             :group="node.group"
                             :side="node.dx < 0 ? 'left' : 'right'"

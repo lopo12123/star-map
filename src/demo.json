@@ -1351,15 +1351,7 @@
                 "OtherScientificTerm": [
                     "ecological nature",
                     "cynomorium coccineum l. fractions",
-                    "cotton fibers",
-                    "phenolic ( tpc )",
-                    "flavanoid ( tfc )",
-                    "antioxidant activity",
-                    "ph value",
-                    "temperature",
-                    "duration",
-                    "perspiration",
-                    "rubbing"
+                    "cotton fibers"
                 ],
                 "Method": [
                     "peels extract of cynomorium coccineum l.",
@@ -1373,8 +1365,7 @@
                 "Task": [
                     "dyeing",
                     "dyeing properties",
-                    "dyeing properties of cotton fibers",
-                    "washing"
+                    "dyeing properties of cotton fibers"
                 ],
                 "Metric": [
                     "fastness"
@@ -1387,8 +1378,7 @@
                 "OtherScientificTerm": [
                     "gallic acid",
                     "folin-ciocalteu 's",
-                    "ph",
-                    "dye liquors"
+                    "ph"
                 ],
                 "Method": [
                     "2,2-diphenyl-1-picrylhydrazyl ( dpph )",
@@ -1409,8 +1399,7 @@
                 "OtherScientificTerm": [
                     "cynomorium coccineum",
                     "vegetable fractions",
-                    "weighted fresh mass",
-                    "absolute methanol"
+                    "weighted fresh mass"
                 ],
                 "Method": [
                     "vacuum evaporator\u00ae apparatus"
@@ -1431,11 +1420,7 @@
                 "OtherScientificTerm": [
                     "water",
                     "naoh",
-                    "non-ionic detergent",
-                    "na 2 co 3",
-                    "sodium hypochlorite",
-                    "sodium carbonate",
-                    "h 2 so 4 media"
+                    "non-ionic detergent"
                 ],
                 "Method": [
                     "nahso 3 solution"
@@ -1476,8 +1461,7 @@
                 "OtherScientificTerm": [
                     "phenol contents",
                     "phenol contents of cynomorium coccineum extracts",
-                    "gallic acid",
-                    "na 2 co 3"
+                    "gallic acid"
                 ],
                 "Method": [
                     "folin-ciocalteu 's reagent"
@@ -1495,10 +1479,7 @@
         "OtherScientificTerm": [
             "cynomorium coccineum methanolic extracts",
             "mordants",
-            "cynomorium coccineum",
-            "nacl",
-            "dye bath",
-            "natural colors"
+            "cynomorium coccineum"
         ],
         "Method": [
             "dyeing procedure",
@@ -1517,8 +1498,7 @@
         "Metric": [
             "total phenol contents ( tpc )",
             "total flavonoid contents",
-            "antioxidant activities",
-            "color strength measurements"
+            "antioxidant activities"
         ]
     },
     "support": [],
