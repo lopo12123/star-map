@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { Parser } from "../lib/render/Parser";
-import TestTree from "./demo.json";
 import { Constants, SMGroup } from "../lib";
 import NodeWithPrompt from "./components/NodeWithPrompt.vue";
 import { calc_rotate } from "./scripts/utils";
-
-console.time('parse')
-const parser = new Parser(TestTree)
+import TestTree from "./demo.json";
 
 type SMNodeConfig = {
     group: SMGroup
@@ -15,6 +12,9 @@ type SMNodeConfig = {
     dx: number
     dy: number
 }
+
+console.time('parse')
+const parser = new Parser(TestTree)
 
 // 第一层级点位固定
 const nodes_lv0 = <SMNodeConfig[]>[
