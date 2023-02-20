@@ -1,0 +1,129 @@
+$SpaceWidth: 3856px;
+$SpaceHeight: 2500px;
+
+$GalaxyWidth: 2410px;
+$GalaxyHeight: 1786px;
+
+// region 附加类
+// 文本单行
+
+// 旋转
+.sm-spin {
+    @keyframes _spin {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    animation: _spin 3s infinite linear;
+}
+
+// 自定义滚动条
+.sm-scroll {
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.6) !important;
+        border-radius: 10px !important;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #000000 !important;
+        opacity: 0 !important;
+    }
+}
+
+// endregion
+
+// region 空间布局嵌套
+// 整个空间
+.sm-space {
+    position: relative;
+    width: $SpaceWidth;
+    height: $SpaceHeight;
+    background: #000;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    // 有效空间
+    .sm-galaxy {
+        position: absolute;
+        width: $GalaxyWidth;
+        height: $GalaxyHeight;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // 绘制区域
+        .sm-canvas {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            //background-color: #2F9E4480;
+        }
+
+        // 交互蒙层
+        .sm-modal {
+            position: absolute;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+// endregion
+
+// region 固定项 (中心、三条轨道)
+.sm-leader {
+    //@extend .sm-spin;
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: calc(50% - 33px);
+    top: calc(50% - 33px);
+    padding: 9px;
+    border: dashed 3px #fff;
+    border-radius: 50%;
+    background: #fff;
+    background-clip: content-box;
+    box-shadow: 0 0 24px #FFFFFF;
+}
+
+@mixin sm-track($radius) {
+    position: absolute;
+    width: $radius * 2;
+    height: $radius * 2;
+    left: calc(50% - #{$radius});
+    top: calc(50% - #{$radius});
+    border: dashed 1px #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.sm-track-1 {
+    @include sm-track(180px);
+}
+
+.sm-track-2 {
+    @include sm-track(550px);
+}
+
+.sm-track-3 {
+    @include sm-track(893px);
+}
+
+// endregion
+
+

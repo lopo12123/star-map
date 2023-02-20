@@ -18,6 +18,21 @@ const SMGroupMap: { [k in SMGroup]: { color: SMPalette, label: string } } = {
     support: { color: SMPalette.Orange, label: "科研支持" },
 } as const
 
+/**
+ * @description 数值
+ */
+const Constants = {
+    TrackRadius0: 0,
+    TrackRadius1: 180,
+    TrackRadius2: 550,
+    TrackRadius3: 893,
+    NodeRadius: 12,
+    PromptWidth: 298,
+    PromptHeight: 50,
+    PromptGap: 12
+}
+
 export {
     SMGroupMap,
+    Constants,
 }

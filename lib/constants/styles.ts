@@ -42,18 +42,18 @@ const SMPromptMaxInLine = 10
  * @description 色卡
  */
 enum SMPalette {
-    Red = 'red',
-    Grape = 'grape',
-    Indigo = 'indigo',
-    Cyan = 'cyan',
-    Green = 'green',
-    Yellow = 'yellow',
-    Pink = 'pink',
-    Violet = 'violet',
-    Blue = 'blue',
-    Teal = 'teal',
-    Lime = 'lime',
-    Orange = 'orange',
+    Red = '#E03131',
+    Grape = '#9C36B5',
+    Indigo = '#3B5BDB',
+    Cyan = '#15AAB0',
+    Green = '#2F9E44',
+    Yellow = '#F08C00',
+    Pink = '#C2255C',
+    Violet = '#6741D9',
+    Blue = '#1971C2',
+    Teal = '#099268',
+    Lime = '#66A80F',
+    Orange = '#E8590C',
 }
 
 // endregion

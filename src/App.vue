@@ -1,159 +1,83 @@
 <script setup lang="ts">
 import { Parser } from "../lib/render/Parser";
+// import TestTree from "./testTree.json";
+import TestTree from "./demo.json";
 
-const testTree = {
-    "doi": "文章的doi",
-    "meta": {
-        "publication_name": {
-            "full": "publication_name_full",
-            "short": "publication_name_short"
-        },
-        "issn": {
-            "print_issn": "print_issn",
-            "online_issn": "online_issn"
-        },
-        "url": "url",
-        "date": {
-            "published_date": "published_date",
-            "submission": "submission"
-        },
-        "volume": "volume",
-        "issue": "issue",
-        "page": {
-            "from": "page-from",
-            "to": "page-to"
-        }
-    },
-    "author": [
-        {
-            "level": 0,
-            "name": "name0",
-            "email": "email0",
-            "address": "address0",
-            "orcid": "orcid0",
-            "phone": "phone0",
-            "affiliation": []
-        },
-        {
-            "level": 1,
-            "name": "name1",
-            "email": "email1",
-            "address": "address1",
-            "orcid": "orcid1",
-            "phone": "phone1",
-            "affiliation": []
-        }
-    ],
-    "table": [
-        {
-            "name": "table1",
-            "keywords": [
-                "关键词1",
-                "关键词2",
-                "关键词3"
-            ]
-        },
-        {
-            "name": "table2",
-            "keywords": [
-                "关键词4",
-                "关键词5",
-                "关键词6"
-            ]
-        }
-    ],
-    "fig": [
-        {
-            "name": "fig1",
-            "keywords": [
-                "关键词1",
-                "关键词2",
-                "关键词3"
-            ]
-        },
-        {
-            "name": "fig2",
-            "keywords": [
-                "关键词4",
-                "关键词5",
-                "关键词6"
-            ]
-        }
-    ],
-    "reference": [
-        "复杂结构"
-    ],
-    "title": "SMTitleNode",
-    "keyword": [
-        "文章关键词1",
-        "文章关键词2",
-        "文章关键词3",
-        "文章关键词4",
-        "文章关键词5"
-    ],
-    "abstract": [
-        {
-            "name": "task",
-            "children": [
-                "task1",
-                "task2",
-                "task3"
-            ]
-        },
-        {
-            "name": "method",
-            "children": [
-                "method1",
-                "method2",
-                "method3"
-            ]
-        }
-    ],
-    "body": [
-        {
-            "name": "part1",
-            "children": [
-                "123123",
-                "234234",
-                "345345"
-            ]
-        },
-        {
-            "name": "part2",
-            "children": [
-                "123123",
-                "234234",
-                "345345"
-            ]
-        }
-    ],
-    "conclusion": [
-        "结论1",
-        "结论2",
-        "结论3",
-        "结论4",
-        "结论5"
-    ],
-    "support": "未知结构"
-}
+import { SMGroup } from "../lib";
+import NodeWithPrompt from "./components/NodeWithPrompt.vue";
 
-const renderer = new Parser(testTree)
+const renderer = new Parser(TestTree)
+
+// 第一层级点位固定
+const GroupRootNodes = <{
+    group: SMGroup
+    title: string
+    content: string
+    dx: number
+    dy: number
+}[]>[
+    // 左侧
+    { group: 'meta', title: 'Meta', content: '元数据', dx: -130, dy: -124 },
+    { group: 'author', title: 'Author', content: '作者', dx: -168, dy: -63 },
+    { group: 'table', title: 'Table', content: '表格', dx: -180, dy: -0 },
+    { group: 'fig', title: 'Fig', content: '图片', dx: -168, dy: 63 },
+    { group: 'reference', title: 'Reference', content: '引用', dx: -130, dy: 124 },
+    // 右侧
+    { group: 'title', title: 'Title', content: '题目', dx: 91, dy: -155 },
+    { group: 'keyword', title: 'Keyword', content: '关键词', dx: 157, dy: -85 },
+    { group: 'abstract', title: 'Abstract', content: '摘要', dx: 178, dy: -23 },
+    { group: 'body', title: 'Body', content: '主体', dx: 178, dy: 23 },
+    { group: 'conclusion', title: 'Conclusion', content: '结论', dx: 157, dy: 85 },
+    { group: 'support', title: 'Support', content: '科研支持', dx: 91, dy: 155 },
+]
 </script>
 
 <template>
-    <div id="container">
-        <div id="canvas"></div>
+    <div class="page">
+        <div id="container" class="sm-scroll">
+            <div class="sm-space">
+                <div class="sm-galaxy">
+                    <!-- <div class="sm-modal"/> -->
+                    <div class="sm-canvas">
+                        <!-- 轨道 -->
+                        <div class="sm-track-1"/>
+                        <div class="sm-track-2"/>
+                        <div class="sm-track-3"/>
+
+                        <!-- 中心 -->
+                        <div class="sm-leader"/>
+
+                        <!-- 一级点位 -->
+                        <NodeWithPrompt
+                            v-for="(node, idx) in GroupRootNodes"
+                            :key="`node-lv1-${node.group}`"
+                            :title="node.title" :content="node.content"
+                            :group="node.group"
+                            :side="idx < 5 ? 'left' : 'right'"
+                            :anchor="[node.dx,node.dy]"/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-#container {
+@import "./style";
+
+.page {
+    position: relative;
     width: 100%;
     height: 100%;
-    overflow: auto;
 
-    #canvas {
-
+    #container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: auto;
     }
 }
 </style>

@@ -16,10 +16,7 @@
         },
         "volume": "volume",
         "issue": "issue",
-        "page": {
-            "from": "page-from",
-            "to": "page-to"
-        }
+        "page": "start-end"
     },
     "author": [
         {
@@ -78,7 +75,7 @@
         }
     ],
     "reference": [
-        "复杂结构"
+        {}
     ],
     "title": "SMTitleNode",
     "keyword": [

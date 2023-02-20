@@ -83,6 +83,7 @@ type SMLink = {
  */
 type SMGroup = 'meta' | 'author' | 'table' | 'fig' | 'reference'
     | 'title' | 'keyword' | 'abstract' | 'body' | 'conclusion' | 'support'
+type SMAIResultGroup = 'OtherScientificTerm' | 'Method' | 'Material' | 'Generic' | 'Task' | 'Metric'
 // endregion
 
 // region DTO
@@ -98,7 +99,7 @@ type SMTree = {
     reference: SMReferenceNode[]
     title: SMTitleNode
     keyword: SMKeywordsNode[]
-    abstract: SMAbstractNode[]
+    abstract: SMAbstractNode
     body: SMBodyNode[]
     conclusion: SMConclusionNode[]
     support: SMSupportNode
@@ -120,7 +121,7 @@ type SMMetaNode = {
     // 期
     issue?: string
     // 页范围
-    page?: { from?: string, to?: string }
+    page?: string
 }
 /**
  * @description 子树 - 作者
@@ -180,10 +181,7 @@ type SMKeywordsNode = string
 /**
  * @description 子树 - 摘要
  */
-type SMAbstractNode = {
-    name: string
-    children?: string[]
-}
+type SMAbstractNode = { [k in SMAIResultGroup]: string[] }
 /**
  * @description 子树 - 主体
  */
@@ -198,7 +196,7 @@ type SMConclusionNode = string
 /**
  * @description 子树 - 科研支持
  */
-type SMSupportNode = never  // todo
+type SMSupportNode = string  // todo
 // endregion
 
 export type {

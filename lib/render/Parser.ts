@@ -420,9 +420,7 @@ class Parser {
     /**
      * @description 解析 Abstract 子树
      */
-    private parseAbstract(abstracts: SMAbstractNode[]) {
-        if(abstracts.length === 0) return
-
+    private parseAbstract(abstracts: SMAbstractNode) {
         const id = getId()
         this.nodes_lv1.set(id, Generator.Node({
             id,
@@ -433,29 +431,30 @@ class Parser {
             content: '摘要'
         }))
 
-        abstracts.forEach(abstract => {
+        for (let abstract_item in abstracts) {
             const id = getId()
             this.nodes_lv2.set(id, Generator.Node({
                 id: id,
-                groupId: 'keyword',
+                groupId: 'abstract',
                 level: 2,
                 trackOrder: ++this.levelOrder.lv2_r,
-                title: abstract.name,
+                title: abstract_item,
                 content: ''
             }))
 
-            abstract.children?.forEach(abstract_sub => {
+            // @ts-ignore
+            abstracts[abstract_item]?.forEach((abstract_sub: string) => {
                 const id = getId()
                 this.nodes_lv3.set(id, Generator.Node({
                     id: id,
-                    groupId: 'keyword',
+                    groupId: 'abstract',
                     level: 3,
                     trackOrder: ++this.levelOrder.lv3_r,
                     title: abstract_sub,
                     content: ''
                 }))
             })
-        })
+        }
     }
 
     /**
@@ -549,6 +548,8 @@ class Parser {
         this.parseAbstract(tree.abstract)
         this.parseBody(tree.body)
         this.parseConclusion(tree.conclusion)
+
+        console.log(this.levelOrder)
     }
 
     /**
