@@ -1,9 +1,9 @@
 {
     "meta": {
-        "publication_name": "Journal of Natural Fibers",
+        "publication": "Journal of Natural Fibers",
         "issn": {
-            "print_issn": "1544-046X",
-            "online_issn": ""
+            "print_issn": "",
+            "online_issn": "1544-046X"
         },
         "volume": "18",
         "page": "21-33",
@@ -145,7 +145,6 @@
         },
         {
             "index": 6,
-            "name": "我没有名字",
             "affiliation_list": [
                 {
                     "affiliation_type": "",
@@ -162,46 +161,57 @@
     ],
     "fig": [
         {
-            "name": "Figure 8 .",
-            "content": "Figure 8. Extraction and dyeing cotton fibers using Cynomorium Coccineum peels fraction extract.",
-            "base": ""
+            "name": "Figure 1 .",
+            "content": "Figure 1.The ability of Cynomorium Coccineum extract to quench reactive species."
         },
         {
-            "name": "Figure 2 .",
-            "content": "Figure 2. (a) UV-visible spectrum and (b) FT-IR spectrum of Cynomorium Coccineum peel fraction extract.",
-            "base": ""
+            "name": "Figure 7 .",
+            "content": "Figure 7. Change of: (a) the color strength and (b) the chromaticity values for cotton dyed with Cynomorium Coccineum peel extract as a function of NaCl concentration."
         },
         {
             "name": "Figure 6 .",
-            "content": "Figure 6.Contour plots for color yield (K/S).",
-            "base": ""
+            "content": "Figure 6.Contour plots for color yield (K/S)."
         },
         {
-            "name": "Figure 1 .",
-            "content": "Figure 1.The ability of Cynomorium Coccineum extract to quench reactive species.",
-            "base": ""
+            "name": "Figure 5 .",
+            "content": "Figure 5. Main effect plots for the color yield (K/S)."
         }
     ],
     "table": [
         {
             "name": "Table 2 .",
             "content": "TPC, TFC, and IC50 measured for Cynomorium Coccineum L. extract.",
-            "base": ""
-        },
-        {
-            "name": "Table 4 .",
-            "content": "Estimated Regression coefficients for color yield (K/S).",
-            "base": ""
+            "word": [
+                "tpc",
+                "tfc",
+                "ic50",
+                "cynomorium coccineum l. extract"
+            ]
         },
         {
             "name": "Table 1 .",
             "content": "The physical properties of the cotton sample used for the dyeing experiments.",
-            "base": ""
+            "word": [
+                "physical properties",
+                "cotton sample",
+                "dyeing"
+            ]
         },
         {
             "name": "Table 3 .",
             "content": "The summarized parameters for a surface design for the dyeing of cotton with Cynomorium Coccineum peel fraction extract.",
-            "base": ""
+            "word": [
+                "surface design",
+                "dyeing of cotton",
+                "cynomorium coccineum peel fraction extract"
+            ]
+        },
+        {
+            "name": "Table 5 .",
+            "content": "Fastness dyeing to washing and rubbing, Fastness dyeing to light and perspiration.",
+            "word": [
+                "fastness dyeing"
+            ]
         }
     ],
     "reference": [
@@ -232,7 +242,10 @@
             "doi": "10.1002/(SICI)1099-1573(199905)13:3%3C248::AID-PTR425%3E3.0.CO;2-D",
             "publication_name": "Phytothermal Research",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "13",
             "issue": "",
@@ -263,7 +276,10 @@
             "doi": "10.1016/s0378-8741(00)00348-2",
             "publication_name": "Journal of Ethnopharmacology",
             "publication_abbrev_name": "Journal of Ethnopharmacology",
-            "issn": "0378-8741",
+            "issn": {
+                "print_issn": "0378-8741",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "75",
             "issue": "1",
@@ -298,7 +314,10 @@
             "doi": "10.1016/j.cej.2008.10.029",
             "publication_name": "Chemical Engineering Journal",
             "publication_abbrev_name": "Chemical Engineering Journal",
-            "issn": "1385-8947",
+            "issn": {
+                "print_issn": "1385-8947",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "149",
             "issue": "1-3",
@@ -314,7 +333,10 @@
             "author": [],
             "publication_name": "Saudi plants used in folk medicine",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "",
             "issue": "",
@@ -357,7 +379,10 @@
             "doi": "10.1002/1099-1573(200006)14:4%3C288::AID-PTR603%3E3.0.CO;2-9",
             "publication_name": "Phytothermal Research",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "14",
             "issue": "",
@@ -408,7 +433,10 @@
             "doi": "10.1016/j.fct.2012.07.003",
             "publication_name": "Food Chemistry Toxicology",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "50",
             "issue": "",
@@ -447,7 +475,10 @@
             "doi": "10.1016/j.compositesa.2007.09.007",
             "publication_name": "Composites Part A: Applied Science and Manufacturing",
             "publication_abbrev_name": "Composites Part A: Applied Science and Manufacturing",
-            "issn": "1359-835X",
+            "issn": {
+                "print_issn": "1359-835X",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "39",
             "issue": "1",
@@ -474,7 +505,10 @@
             "doi": "10.1016/j.foodres.2011.03.031",
             "publication_name": "Food Research International",
             "publication_abbrev_name": "Food Research International",
-            "issn": "0963-9969",
+            "issn": {
+                "print_issn": "0963-9969",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "44",
             "issue": "5",
@@ -490,7 +524,10 @@
             "author": [],
             "publication_name": "Duke's handbook of medicinal plants of the bible",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "",
             "issue": "",
@@ -516,7 +553,10 @@
             ],
             "publication_name": "Journal of Textile Association",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "62",
             "issue": "",
@@ -539,8 +579,11 @@
             "doi": "10.1089/jmf.2010.0197",
             "publication_name": "Journal of Medicinal Food",
             "publication_abbrev_name": "Journal of Medicinal Food",
-            "issn": "1096-620X",
-            "eissn": "1557-7600",
+            "issn": {
+                "print_issn": "1096-620X",
+                "online_issn": "1557-7600"
+            },
+            "eissn": "",
             "volume": "14",
             "issue": "9",
             "page": "",
@@ -570,7 +613,10 @@
             "doi": "10.1016/j.jhazmat.2006.12.034",
             "publication_name": "Journal of Hazardous Materials",
             "publication_abbrev_name": "Journal of Hazardous Materials",
-            "issn": "0304-3894",
+            "issn": {
+                "print_issn": "0304-3894",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "146",
             "issue": "1-2",
@@ -586,7 +632,10 @@
             "author": [],
             "publication_name": "Plants of the Northern Saudi Arabia, an illustrated guide",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "",
             "issue": "",
@@ -613,7 +662,10 @@
             "doi": "10.1016/s0923-0467(98)00076-1",
             "publication_name": "Chemical Engineering Journal",
             "publication_abbrev_name": "Chemical Engineering Journal",
-            "issn": "1385-8947",
+            "issn": {
+                "print_issn": "1385-8947",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "70",
             "issue": "2",
@@ -643,7 +695,10 @@
             ],
             "publication_name": "Pahlavi Medical Journal",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "9",
             "issue": "",
@@ -674,7 +729,10 @@
             "doi": "10.1016/j.jclepro.2013.06.004",
             "publication_name": "Journal of Cleaner Production",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "57",
             "issue": "",
@@ -697,8 +755,11 @@
             "doi": "10.31031/tteft.2018.01.000502",
             "publication_name": "Trends in Textile Engineering & Fashion Technology",
             "publication_abbrev_name": "TTEFT",
-            "issn": "",
-            "eissn": "2578-0271",
+            "issn": {
+                "print_issn": "",
+                "online_issn": "2578-0271"
+            },
+            "eissn": "",
             "volume": "1",
             "issue": "1",
             "page": "",
@@ -732,7 +793,10 @@
             "doi": "10.1177/155892501100600301",
             "publication_name": "Journal of Engineered Fibers and Fabrics",
             "publication_abbrev_name": "Journal of Engineered Fibers and Fabrics",
-            "issn": "1558-9250",
+            "issn": {
+                "print_issn": "1558-9250",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "6",
             "issue": "3",
@@ -767,7 +831,10 @@
             "doi": "10.1016/j.indcrop.2017.07.032",
             "publication_name": "Industrial Crops and Products",
             "publication_abbrev_name": "Industrial Crops and Products",
-            "issn": "0926-6690",
+            "issn": {
+                "print_issn": "0926-6690",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "108",
             "issue": "",
@@ -802,7 +869,10 @@
             "doi": "10.1016/j.ultsonch.2008.08.001",
             "publication_name": "Ultrasonics Sonochemistry",
             "publication_abbrev_name": "Ultrasonics Sonochemistry",
-            "issn": "1350-4177",
+            "issn": {
+                "print_issn": "1350-4177",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "16",
             "issue": "2",
@@ -849,7 +919,10 @@
             "doi": "10.1016/j.dyepig.2017.02.002",
             "publication_name": "Dyes and Pigments",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "141",
             "issue": "",
@@ -888,7 +961,10 @@
             "doi": "10.1080/14786419.2017.1285303",
             "publication_name": "Natural Product Research",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "31",
             "issue": "",
@@ -926,7 +1002,10 @@
             ],
             "publication_name": "Physical Chemistry",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "12",
             "issue": "",
@@ -957,7 +1036,10 @@
             "doi": "10.1016/j.colsurfa.2004.11.003",
             "publication_name": "Colloids and Surfaces A: Physicochemical and Engineering Aspects",
             "publication_abbrev_name": "Colloids and Surfaces A: Physicochemical and Engineering Aspects",
-            "issn": "0927-7757",
+            "issn": {
+                "print_issn": "0927-7757",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "253",
             "issue": "1-3",
@@ -988,7 +1070,10 @@
             "doi": "10.1002/app.36991",
             "publication_name": "Journal of Applied Polymer Science",
             "publication_abbrev_name": "J. Appl. Polym. Sci.",
-            "issn": "0021-8995",
+            "issn": {
+                "print_issn": "0021-8995",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "126",
             "issue": "S1",
@@ -1031,7 +1116,10 @@
             "doi": "10.1016/j.carbpol.2009.03.011",
             "publication_name": "Carbohydrate Polymers",
             "publication_abbrev_name": "Carbohydrate Polymers",
-            "issn": "0144-8617",
+            "issn": {
+                "print_issn": "0144-8617",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "77",
             "issue": "4",
@@ -1066,7 +1154,10 @@
             "doi": "10.3923/jbs.2010.316.324",
             "publication_name": "Journal of Biological Sciences",
             "publication_abbrev_name": "J. of Biological Sciences",
-            "issn": "1727-3048",
+            "issn": {
+                "print_issn": "1727-3048",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "10",
             "issue": "4",
@@ -1097,7 +1188,10 @@
             "doi": "10.1016/j.cej.2016.08.070",
             "publication_name": "Chemical Engineering Journal",
             "publication_abbrev_name": "Chemical Engineering Journal",
-            "issn": "1385-8947",
+            "issn": {
+                "print_issn": "1385-8947",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "307",
             "issue": "",
@@ -1127,7 +1221,10 @@
             "doi": "10.1016/j.jclepro.2013.03.031",
             "publication_name": "Journal of Cleaner Production",
             "publication_abbrev_name": "Journal of Cleaner Production",
-            "issn": "0959-6526",
+            "issn": {
+                "print_issn": "0959-6526",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "53",
             "issue": "",
@@ -1166,7 +1263,10 @@
             "doi": "10.1016/j.fct.2011.07.042",
             "publication_name": "Food and Chemical Toxicology",
             "publication_abbrev_name": "Food and Chemical Toxicology",
-            "issn": "0278-6915",
+            "issn": {
+                "print_issn": "0278-6915",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "49",
             "issue": "10",
@@ -1196,7 +1296,10 @@
             ],
             "publication_name": "Colourage",
             "publication_abbrev_name": "",
-            "issn": "",
+            "issn": {
+                "print_issn": "",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "12",
             "issue": "",
@@ -1243,7 +1346,10 @@
             "doi": "10.1016/j.ifset.2007.06.006",
             "publication_name": "Innovative Food Science & Emerging Technologies",
             "publication_abbrev_name": "Innovative Food Science & Emerging Technologies",
-            "issn": "1466-8564",
+            "issn": {
+                "print_issn": "1466-8564",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "9",
             "issue": "1",
@@ -1290,7 +1396,10 @@
             "doi": "10.1016/j.jclepro.2012.01.005",
             "publication_name": "Journal of Cleaner Production",
             "publication_abbrev_name": "Journal of Cleaner Production",
-            "issn": "0959-6526",
+            "issn": {
+                "print_issn": "0959-6526",
+                "online_issn": ""
+            },
             "eissn": "",
             "volume": "27",
             "issue": "",
@@ -1306,7 +1415,29 @@
     "title": "Effective Dyeing of Cotton Fibers Using <i>Cynomorium Coccineum</i> L. Peel Extracts: Study of the Influential Factors Using Surface Response Methodology",
     "keyword": "",
     "abstract": {
-        "OtherScientificTerm": [
+        "\u7814\u7a76\u76ee\u7684": [
+            "cotton fibers dyeing",
+            "dyeing",
+            "washing",
+            "perspiration",
+            "rubbing"
+        ],
+        "\u7814\u7a76\u65b9\u6cd5": [
+            "uv-visible , ft-ir spectroscopy",
+            "flavanoid ( tfc )",
+            "surface design",
+            "sem analysis"
+        ],
+        "\u6750\u6599": [
+            "cynomorium coccineum peels extract"
+        ],
+        "\u901a\u7528\u540d\u8bcd": [],
+        "\u53c2\u6570": [
+            "color strength ( k/s )",
+            "color strength",
+            "fastness"
+        ],
+        "\u5b9e\u4f53": [
             "total contents both phenolic ( tpc )",
             "reactive species",
             "dyeing conditions",
@@ -1320,187 +1451,184 @@
             "electrolyte nacl",
             "textile dyeing characteristics",
             "uniform morphology"
-        ],
-        "Method": [
-            "uv-visible , ft-ir spectroscopy",
-            "flavanoid ( tfc )",
-            "surface design",
-            "sem analysis"
-        ],
-        "Material": [
-            "cynomorium coccineum peels extract"
-        ],
-        "Generic": [],
-        "Task": [
-            "cotton fibers dyeing",
-            "dyeing",
-            "washing",
-            "perspiration",
-            "rubbing"
-        ],
-        "Metric": [
-            "color strength ( k/s )",
-            "color strength",
-            "fastness"
         ]
     },
     "body": [
         {
             "name": "Introduction",
             "content": {
-                "OtherScientificTerm": [
-                    "ecological nature",
-                    "cynomorium coccineum l. fractions",
-                    "cotton fibers"
+                "\u7814\u7a76\u76ee\u7684": [
+                    "dyeing",
+                    "dyeing properties",
+                    "dyeing properties of cotton fibers",
+                    "washing"
                 ],
-                "Method": [
+                "\u7814\u7a76\u65b9\u6cd5": [
                     "peels extract of cynomorium coccineum l.",
                     "surface response methodology"
                 ],
-                "Material": [],
-                "Generic": [
+                "\u6750\u6599": [],
+                "\u901a\u7528\u540d\u8bcd": [
                     "components",
                     "they"
                 ],
-                "Task": [
-                    "dyeing",
-                    "dyeing properties",
-                    "dyeing properties of cotton fibers"
-                ],
-                "Metric": [
+                "\u53c2\u6570": [
                     "fastness"
+                ],
+                "\u5b9e\u4f53": [
+                    "ecological nature",
+                    "cynomorium coccineum l. fractions",
+                    "cotton fibers",
+                    "phenolic ( tpc )",
+                    "flavanoid ( tfc )",
+                    "antioxidant activity",
+                    "ph value",
+                    "temperature",
+                    "duration",
+                    "perspiration",
+                    "rubbing"
                 ]
             }
         },
         {
             "name": "Chemicals and reagents",
             "content": {
-                "OtherScientificTerm": [
-                    "gallic acid",
-                    "folin-ciocalteu 's",
-                    "ph"
+                "\u7814\u7a76\u76ee\u7684": [
+                    "dyeing"
                 ],
-                "Method": [
+                "\u7814\u7a76\u65b9\u6cd5": [
                     "2,2-diphenyl-1-picrylhydrazyl ( dpph )",
                     "naoh",
                     "chlorohydric acid"
                 ],
-                "Material": [],
-                "Generic": [],
-                "Task": [
-                    "dyeing"
-                ],
-                "Metric": []
+                "\u6750\u6599": [],
+                "\u901a\u7528\u540d\u8bcd": [],
+                "\u53c2\u6570": [],
+                "\u5b9e\u4f53": [
+                    "gallic acid",
+                    "folin-ciocalteu 's",
+                    "ph",
+                    "dye liquors"
+                ]
             }
         },
         {
             "name": "Preparation of cynomorium coccineum peel extracts",
             "content": {
-                "OtherScientificTerm": [
-                    "cynomorium coccineum",
-                    "vegetable fractions",
-                    "weighted fresh mass"
-                ],
-                "Method": [
-                    "vacuum evaporator\u00ae apparatus"
-                ],
-                "Material": [
-                    "distilled water"
-                ],
-                "Generic": [],
-                "Task": [
+                "\u7814\u7a76\u76ee\u7684": [
                     "dyeing"
                 ],
-                "Metric": []
+                "\u7814\u7a76\u65b9\u6cd5": [
+                    "vacuum evaporator\u00ae apparatus"
+                ],
+                "\u6750\u6599": [
+                    "distilled water"
+                ],
+                "\u901a\u7528\u540d\u8bcd": [],
+                "\u53c2\u6570": [],
+                "\u5b9e\u4f53": [
+                    "cynomorium coccineum",
+                    "vegetable fractions",
+                    "weighted fresh mass",
+                    "absolute methanol"
+                ]
             }
         },
         {
             "name": "Textile sample pre-treatments",
             "content": {
-                "OtherScientificTerm": [
-                    "water",
-                    "naoh",
-                    "non-ionic detergent"
+                "\u7814\u7a76\u76ee\u7684": [
+                    "dyeing"
                 ],
-                "Method": [
+                "\u7814\u7a76\u65b9\u6cd5": [
                     "nahso 3 solution"
                 ],
-                "Material": [
+                "\u6750\u6599": [
                     "cotton",
                     "textile sample"
                 ],
-                "Generic": [],
-                "Task": [
-                    "dyeing"
-                ],
-                "Metric": []
+                "\u901a\u7528\u540d\u8bcd": [],
+                "\u53c2\u6570": [],
+                "\u5b9e\u4f53": [
+                    "water",
+                    "naoh",
+                    "non-ionic detergent",
+                    "na 2 co 3",
+                    "sodium hypochlorite",
+                    "sodium carbonate",
+                    "h 2 so 4 media"
+                ]
             }
         },
         {
             "name": "Characterization techniques",
             "content": {
-                "OtherScientificTerm": [
-                    "fourier transform infra-red spectra",
-                    "morphological features"
-                ],
-                "Method": [
+                "\u7814\u7a76\u76ee\u7684": [],
+                "\u7814\u7a76\u65b9\u6cd5": [
                     "perkin elmer spectrum two atr-ftir",
                     "sem hitachi s-2360n"
                 ],
-                "Material": [
+                "\u6750\u6599": [
                     "dyed cotton samples"
                 ],
-                "Generic": [],
-                "Task": [],
-                "Metric": []
+                "\u901a\u7528\u540d\u8bcd": [],
+                "\u53c2\u6570": [],
+                "\u5b9e\u4f53": [
+                    "fourier transform infra-red spectra",
+                    "morphological features"
+                ]
             }
         },
         {
             "name": "TPC determination",
             "content": {
-                "OtherScientificTerm": [
-                    "phenol contents",
-                    "phenol contents of cynomorium coccineum extracts",
-                    "gallic acid"
-                ],
-                "Method": [
+                "\u7814\u7a76\u76ee\u7684": [],
+                "\u7814\u7a76\u65b9\u6cd5": [
                     "folin-ciocalteu 's reagent"
                 ],
-                "Material": [
+                "\u6750\u6599": [
                     "cynomorium coccineum extracts"
                 ],
-                "Generic": [],
-                "Task": [],
-                "Metric": []
+                "\u901a\u7528\u540d\u8bcd": [],
+                "\u53c2\u6570": [],
+                "\u5b9e\u4f53": [
+                    "phenol contents",
+                    "phenol contents of cynomorium coccineum extracts",
+                    "gallic acid",
+                    "na 2 co 3"
+                ]
             }
         }
     ],
     "conclusion": {
-        "OtherScientificTerm": [
-            "cynomorium coccineum methanolic extracts",
-            "mordants",
-            "cynomorium coccineum"
+        "\u7814\u7a76\u76ee\u7684": [
+            "textile clothing"
         ],
-        "Method": [
+        "\u7814\u7a76\u65b9\u6cd5": [
             "dyeing procedure",
             "dyeing process"
         ],
-        "Material": [
+        "\u6750\u6599": [
             "textile materials",
             "natural materials"
         ],
-        "Generic": [
+        "\u901a\u7528\u540d\u8bcd": [
             "it"
         ],
-        "Task": [
-            "textile clothing"
-        ],
-        "Metric": [
+        "\u53c2\u6570": [
             "total phenol contents ( tpc )",
             "total flavonoid contents",
-            "antioxidant activities"
+            "antioxidant activities",
+            "color strength measurements"
+        ],
+        "\u5b9e\u4f53": [
+            "cynomorium coccineum methanolic extracts",
+            "mordants",
+            "cynomorium coccineum",
+            "nacl",
+            "dye bath",
+            "natural colors"
         ]
     },
-    "support": [],
-    "doi": ""
+    "science": []
 }

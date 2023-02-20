@@ -20,15 +20,15 @@ const parser = new Parser(TestTree)
 const nodes_lv0 = <SMNodeConfig[]>[
     // 左侧
     { group: 'meta', title: 'Meta', content: '元数据', dx: -130, dy: -124 },
-    { group: 'author', title: 'Author', content: '作者', dx: -168, dy: -63 },
+    { group: 'body', title: 'Body', content: '主体', dx: -168, dy: -63 },
     { group: 'table', title: 'Table', content: '表格', dx: -180, dy: -0 },
     { group: 'fig', title: 'Fig', content: '图片', dx: -168, dy: 63 },
     { group: 'reference', title: 'Reference', content: '引用', dx: -130, dy: 124 },
     // 右侧
     { group: 'title', title: 'Title', content: '题目', dx: 91, dy: -155 },
     { group: 'keyword', title: 'Keyword', content: '关键词', dx: 157, dy: -85 },
-    { group: 'abstract', title: 'Abstract', content: '摘要', dx: 178, dy: -23 },
-    { group: 'body', title: 'Body', content: '主体', dx: 178, dy: 23 },
+    { group: 'author', title: 'Author', content: '作者', dx: 178, dy: -23 },
+    { group: 'abstract', title: 'Abstract', content: '摘要', dx: 178, dy: 23 },
     { group: 'conclusion', title: 'Conclusion', content: '结论', dx: 157, dy: 85 },
     { group: 'support', title: 'Support', content: '科研支持', dx: 91, dy: 155 },
 ]

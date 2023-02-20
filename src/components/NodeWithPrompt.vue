@@ -82,7 +82,7 @@ $PromptRadius: 8px;
         @include sm-follower(#E03131);
     }
 
-    .sm-node-author {
+    .sm-node-body {
         @include sm-follower(#9C36B5);
     }
 
@@ -106,11 +106,11 @@ $PromptRadius: 8px;
         @include sm-follower(#6741D9);
     }
 
-    .sm-node-abstract {
+    .sm-node-author {
         @include sm-follower(#1971C2);
     }
 
-    .sm-node-body {
+    .sm-node-abstract {
         @include sm-follower(#099268);
     }
 
@@ -138,6 +138,7 @@ $PromptRadius: 8px;
         border-radius: $PromptRadius;
         background: rgba(0, 0, 0, 0.64);
         backdrop-filter: blur(1px);
+        user-select: none;
         display: flex;
         flex-direction: column;
         align-items: flex-start;

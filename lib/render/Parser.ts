@@ -12,6 +12,8 @@ import {
 import { Generator, SMNodePrefab } from "./Generator";
 import { getId } from "../utils";
 
+const Numbers = [ '', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十' ]
+
 /**
  * @description 解析器, 解析树生成对应的配置信息
  */
@@ -221,6 +223,50 @@ class Parser {
     }
 
     /**
+     * @description 解析 Body 子树
+     */
+    private parseBody(bodies: SMBodyNode[]) {
+        if(bodies.length === 0) return
+
+        const id = getId()
+        this.nodes_lv1.set(id, Generator.Node({
+            id,
+            group: 'body',
+            level: 1,
+            trackOrder: --this.levelOrder.lv1_l,
+            title: 'body',
+            content: '主体'
+        }))
+
+        bodies.forEach(body => {
+            const id = getId()
+            this.nodes_lv2.set(id, Generator.Node({
+                id: id,
+                group: 'body',
+                level: 2,
+                trackOrder: --this.levelOrder.lv2_l,
+                title: body.name,
+                content: ''
+            }))
+
+            for (let body_content_item in body.content) {
+                // @ts-ignore
+                body.content[body_content_item]?.forEach(body_content_sub => {
+                    const id = getId()
+                    this.nodes_lv3.set(id, Generator.Node({
+                        id: id,
+                        group: 'body',
+                        level: 3,
+                        trackOrder: --this.levelOrder.lv3_l,
+                        title: body_content_sub,
+                        content: ''
+                    }))
+                })
+            }
+        })
+    }
+
+    /**
      * @description 解析 author 子树
      */
     private parseAuthor(authors: SMAuthorNode[]) {
@@ -231,7 +277,7 @@ class Parser {
             id,
             group: 'author',
             level: 1,
-            trackOrder: --this.levelOrder.lv1_l,
+            trackOrder: ++this.levelOrder.lv1_r,
             title: 'author',
             content: '作者'
         }))
@@ -242,12 +288,22 @@ class Parser {
                 id,
                 group: 'author',
                 level: 2,
-                trackOrder: --this.levelOrder.lv2_l,
-                title: author.role === 'corresp' ? '通讯作者' : '作者',
-                content: '' + author.name
+                trackOrder: ++this.levelOrder.lv2_r,
+                title: author.role === 'corresp' ? '通讯作者' : `第${ Numbers[author.index] }作者`,
+                content: author.name ?? ''
             }))
 
-            // todo 处理 affiliation
+            author.affiliation_list?.forEach(affiliation => {
+                const id = getId()
+                this.nodes_lv3.set(id, Generator.Node({
+                    id,
+                    group: 'author',
+                    level: 3,
+                    trackOrder: ++this.levelOrder.lv3_r,
+                    title: affiliation.affiliation_type,
+                    content: affiliation.affiliation
+                }))
+            })
         })
     }
 
@@ -435,50 +491,6 @@ class Parser {
     }
 
     /**
-     * @description 解析 Body 子树
-     */
-    private parseBody(bodies: SMBodyNode[]) {
-        if(bodies.length === 0) return
-
-        const id = getId()
-        this.nodes_lv1.set(id, Generator.Node({
-            id,
-            group: 'body',
-            level: 1,
-            trackOrder: ++this.levelOrder.lv1_r,
-            title: 'body',
-            content: '主体'
-        }))
-
-        bodies.forEach(body => {
-            const id = getId()
-            this.nodes_lv2.set(id, Generator.Node({
-                id: id,
-                group: 'body',
-                level: 2,
-                trackOrder: ++this.levelOrder.lv2_r,
-                title: body.name,
-                content: ''
-            }))
-
-            for (let body_content_item in body.content) {
-                // @ts-ignore
-                body.content[body_content_item]?.forEach(body_content_sub => {
-                    const id = getId()
-                    this.nodes_lv3.set(id, Generator.Node({
-                        id: id,
-                        group: 'body',
-                        level: 3,
-                        trackOrder: ++this.levelOrder.lv3_r,
-                        title: body_content_sub,
-                        content: ''
-                    }))
-                })
-            }
-        })
-    }
-
-    /**
      * @description 解析 Conclusion 子树
      */
     private parseConclusion(conclusions: SMConclusionNode) {
@@ -528,7 +540,7 @@ class Parser {
     constructor(tree: SMTree) {
         // 左侧
         this.parseMeta(tree.meta)
-        this.parseAuthor(tree.author)
+        this.parseBody(tree.body)
         this.parseTable(tree.table)
         this.parseFig(tree.fig)
         this.parseReference(tree.reference)
@@ -536,8 +548,8 @@ class Parser {
         // 右侧
         this.parseTitle(tree.title)
         this.parseKeyword(tree.keyword)
+        this.parseAuthor(tree.author)
         this.parseAbstract(tree.abstract)
-        this.parseBody(tree.body)
         this.parseConclusion(tree.conclusion)
     }
 

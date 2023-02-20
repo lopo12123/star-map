@@ -136,8 +136,18 @@ type SMAuthorNode = {
     orcid?: string
     phone?: string
     // 单位
-    affiliation?: {
-        // todo
+    affiliation_list?: {
+        affiliation_type: string
+        affiliation: string
+        org: {
+            "@type": string
+            "@key": string
+            "#text": string
+        }[]
+        postCode: string
+        settlement: string
+        country_abbrev: string
+        country: string
     }[]
 }
 /**
