@@ -165,7 +165,7 @@ type SMReferenceNode = {
     date?: { published_date?: string, submission?: string }
     volume?: string
     issue?: string
-    page?: { from?: string, to?: string }
+    page?: string
     // 直接展示不用管
     note?: string
 }

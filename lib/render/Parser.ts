@@ -212,20 +212,16 @@ class Parser {
                 content: ''
             }))
 
-            for (let key in page) {
+            const id2 = getId()
+            this.nodes_lv3.set(id2, Generator.Node({
+                id: id2,
+                groupId: 'meta',
+                level: 3,
+                trackOrder: --this.levelOrder.lv3_l,
                 // @ts-ignore
-                if(!page[key]) continue
-                const id = getId()
-                this.nodes_lv3.set(id, Generator.Node({
-                    id,
-                    groupId: 'meta',
-                    level: 3,
-                    trackOrder: --this.levelOrder.lv3_l,
-                    // @ts-ignore
-                    title: page[key],
-                    content: ''
-                }))
-            }
+                title: page,
+                content: ''
+            }))
         }
     }
 
