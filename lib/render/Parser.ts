@@ -300,8 +300,8 @@ class Parser {
                     group: 'author',
                     level: 3,
                     trackOrder: ++this.levelOrder.lv3_r,
-                    title: affiliation.affiliation_type,
-                    content: affiliation.affiliation
+                    title: affiliation.affiliation_type + ': ' + affiliation.affiliation,
+                    content: ''
                 }))
             })
         })
