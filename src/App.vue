@@ -1,30 +1,23 @@
 <script setup lang="ts">
 import { Parser } from "../lib/render/Parser";
 import TestTree from "./demo.json";
-
-import { SMGroup } from "../lib";
+import { Constants, SMGroup } from "../lib";
 import NodeWithPrompt from "./components/NodeWithPrompt.vue";
+import { calc_rotate } from "./scripts/utils";
 
 console.time('parse')
 const parser = new Parser(TestTree)
-console.timeEnd('parse')
 
-const node_lv1 = parser.getLv1()
-// const node_lv2 = parser.getLv2()
-// const node_lv3 = parser.getLv3()
-
-console.log(node_lv1)
-// console.log(node_lv2)
-// console.log(node_lv3)
-
-// 第一层级点位固定
-const GroupRootNodes = <{
+type SMNodeConfig = {
     group: SMGroup
     title: string
     content: string
     dx: number
     dy: number
-}[]>[
+}
+
+// 第一层级点位固定
+const nodes_lv0 = <SMNodeConfig[]>[
     // 左侧
     { group: 'meta', title: 'Meta', content: '元数据', dx: -130, dy: -124 },
     { group: 'author', title: 'Author', content: '作者', dx: -168, dy: -63 },
@@ -39,6 +32,21 @@ const GroupRootNodes = <{
     { group: 'conclusion', title: 'Conclusion', content: '结论', dx: 157, dy: 85 },
     { group: 'support', title: 'Support', content: '科研支持', dx: 91, dy: 155 },
 ]
+
+// 第二层
+const lv2 = parser.getLv2()
+const lv2_count = lv2.length
+const lv2_left = lv2.reduce((prev, curr) => prev + (curr.trackOrder < 0 ? 1 : 0), 0)
+const nodes_lv2: SMNodeConfig[] = lv2.map(v => {
+    const { group, title, content, trackOrder } = v
+    return {
+        group, title, content,
+        ...calc_rotate(Math.abs(trackOrder) - 1, trackOrder < 0 ? lv2_left : (lv2_count - lv2_left), Constants.TrackRadius2, trackOrder < 0 ? 'left' : 'right')
+    }
+})
+console.log(lv2)
+
+console.timeEnd('parse')
 </script>
 
 <template>
@@ -58,11 +66,20 @@ const GroupRootNodes = <{
 
                         <!-- 一级点位 -->
                         <NodeWithPrompt
-                            v-for="(node, idx) in GroupRootNodes"
+                            v-for="(node, idx) in nodes_lv0"
                             :key="`node-lv1-${node.group}`"
                             :title="node.title" :content="node.content"
                             :group="node.group"
                             :side="idx < 5 ? 'left' : 'right'"
+                            :anchor="[node.dx,node.dy]"/>
+
+                        <!-- 二级点位 -->
+                        <NodeWithPrompt
+                            v-for="(node, idx) in nodes_lv2"
+                            :key="`node-lv2-${node.group}-${idx}`"
+                            :title="node.title" :content="node.content"
+                            :group="node.group"
+                            :side="node.dx < 0 ? 'left' : 'right'"
                             :anchor="[node.dx,node.dy]"/>
 
                     </div>

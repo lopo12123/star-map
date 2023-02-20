@@ -14,6 +14,7 @@ const props = defineProps<{
     content: string
 }>()
 
+const titleTextAlign = props.side === 'left' ? 'right' : 'left'
 const flexDirection = props.side === 'left' ? 'row-reverse' : 'row'
 const marginLeft = props.side === 'left' ? '-318px' : '-12px'
 const direction = props.side === 'left' ? 'rtl' : 'ltr'
@@ -24,7 +25,7 @@ const direction = props.side === 'left' ? 'rtl' : 'ltr'
          :style="{left: `calc(50% + ${anchor[0]}px)`,top: `calc(50% + ${anchor[1]}px)`}">
         <div :class="`sm-node-${group}`"/>
         <i class="gap"/>
-        <div class="sm-prompt">
+        <div class="sm-prompt" :data-dx="anchor[0]" :data-dy="anchor[1]">
             <div class="title">{{ title }}</div>
             <div class="content">{{ content }}</div>
         </div>
@@ -49,9 +50,9 @@ $PromptRadius: 8px;
     height: 50px;
     margin-top: -25px;
     margin-left: v-bind(marginLeft);
-    direction: v-bind(direction);
+    //direction: v-bind(direction);
     display: flex;
-    //flex-direction: v-bind(flexDirection);
+    flex-direction: v-bind(flexDirection);
     align-items: center;
     justify-content: flex-start;
 
@@ -146,6 +147,7 @@ $PromptRadius: 8px;
             @extend .sm-inline;
             color: #fff;
             font-size: 16px;
+            text-align: v-bind(titleTextAlign);
         }
 
         .content {

@@ -68,7 +68,6 @@ $GalaxyHeight: 1786px;
             position: relative;
             width: 100%;
             height: 100%;
-            //background-color: #2F9E4480;
         }
 
         // 交互蒙层
@@ -87,7 +86,7 @@ $GalaxyHeight: 1786px;
 
 // region 固定项 (中心、三条轨道)
 .sm-leader {
-    //@extend .sm-spin;
+    @extend .sm-spin;
     position: absolute;
     width: 66px;
     height: 66px;
@@ -102,6 +101,7 @@ $GalaxyHeight: 1786px;
 }
 
 @mixin sm-track($radius) {
+    @extend .sm-spin;
     position: absolute;
     width: $radius * 2;
     height: $radius * 2;

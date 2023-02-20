@@ -237,33 +237,15 @@ class Parser {
         }))
 
         authors.forEach(author => {
-            for (let k in author) {
-                if(k === 'affiliation') continue
-
-                const id = getId()
-                this.nodes_lv2.set(id, Generator.Node({
-                    id,
-                    group: 'author',
-                    level: 2,
-                    trackOrder: --this.levelOrder.lv2_l,
-                    title: author.role === 'corresp' ? '通讯作者' : '作者',
-                    content: ''
-                }))
-
-                // @ts-ignore
-                if(author[k]) {
-                    const id = getId()
-                    this.nodes_lv3.set(id, Generator.Node({
-                        id,
-                        group: 'author',
-                        level: 3,
-                        trackOrder: --this.levelOrder.lv3_l,
-                        // @ts-ignore
-                        title: author[k] ?? '',
-                        content: ''
-                    }))
-                }
-            }
+            const id = getId()
+            this.nodes_lv2.set(id, Generator.Node({
+                id,
+                group: 'author',
+                level: 2,
+                trackOrder: --this.levelOrder.lv2_l,
+                title: author.role === 'corresp' ? '通讯作者' : '作者',
+                content: '' + author.name
+            }))
 
             // todo 处理 affiliation
         })
@@ -564,11 +546,11 @@ class Parser {
     }
 
     getLv2() {
-        return this.nodes_lv2
+        return [ ...this.nodes_lv2.values() ].map(v => v.getConfig())
     }
 
     getLv3() {
-        return this.nodes_lv3
+        return [ ...this.nodes_lv3.values() ].map(v => v.getConfig())
     }
 
     dispose() {
